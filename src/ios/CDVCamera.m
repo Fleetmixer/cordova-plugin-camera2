@@ -190,7 +190,7 @@ static NSString* toBase64(NSData* data) {
                             [weakSelf sendNoPermissionResult:command.callbackId];
                         }]];
                         [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Settings", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-                            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
+                            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString] options:@{} completionHandler:nil];
                             [weakSelf sendNoPermissionResult:command.callbackId];
                         }]];
                         [weakSelf.viewController presentViewController:alertController animated:YES completion:nil];
